@@ -10,8 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        VStack(alignment: .center, spacing: 16, content: {
+            Text("Para configurar, adicione a senha e o secret no Keychain")
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Senha: \(KeychainHelper.keyPassword)")
+                Text("Secret: \(KeychainHelper.keySecret)")
+            }
+        })
     }
 }
 

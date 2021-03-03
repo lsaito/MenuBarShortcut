@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384982B425F00E2A00F1B745 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384982B325F00E2A00F1B745 /* NotificationHelper.swift */; };
 		38A8208025E6D5A100C54DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8207F25E6D5A100C54DDF /* AppDelegate.swift */; };
 		38A8208225E6D5A100C54DDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8208125E6D5A100C54DDF /* ContentView.swift */; };
 		38A8208425E6D5A400C54DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A8208325E6D5A400C54DDF /* Assets.xcassets */; };
 		38A8208725E6D5A400C54DDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A8208625E6D5A400C54DDF /* Preview Assets.xcassets */; };
 		38A8208A25E6D5A400C54DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A8208825E6D5A400C54DDF /* Main.storyboard */; };
+		38A8209325E6ED1B00C54DDF /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8209225E6ED1B00C54DDF /* MenuBar.swift */; };
+		38A8209725E74C9B00C54DDF /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8209525E74C9B00C54DDF /* Generator.swift */; };
+		38A8209825E74C9B00C54DDF /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8209625E74C9B00C54DDF /* Crypto.swift */; };
+		38A8209A25E74D0C00C54DDF /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8209925E74D0C00C54DDF /* Token.swift */; };
+		38A8209E25E7503700C54DDF /* Token+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8209D25E7503700C54DDF /* Token+URL.swift */; };
+		38A820A025E7537B00C54DDF /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8209F25E7537B00C54DDF /* Base32.swift */; };
+		38A820A225E7E2FB00C54DDF /* CopyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A820A125E7E2FB00C54DDF /* CopyHelper.swift */; };
+		38A820A425E81BE100C54DDF /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A820A325E81BE100C54DDF /* KeychainHelper.swift */; };
+		38A820A625E9957F00C54DDF /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A820A525E9957F00C54DDF /* AuthenticationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384982B325F00E2A00F1B745 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		38A8207C25E6D5A100C54DDF /* MenuBarShortcut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuBarShortcut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A8207F25E6D5A100C54DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38A8208125E6D5A100C54DDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +34,15 @@
 		38A8208925E6D5A400C54DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38A8208B25E6D5A400C54DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38A8208C25E6D5A400C54DDF /* MenuBarShortcut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuBarShortcut.entitlements; sourceTree = "<group>"; };
+		38A8209225E6ED1B00C54DDF /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		38A8209525E74C9B00C54DDF /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		38A8209625E74C9B00C54DDF /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		38A8209925E74D0C00C54DDF /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		38A8209D25E7503700C54DDF /* Token+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Token+URL.swift"; sourceTree = "<group>"; };
+		38A8209F25E7537B00C54DDF /* Base32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
+		38A820A125E7E2FB00C54DDF /* CopyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyHelper.swift; sourceTree = "<group>"; };
+		38A820A325E81BE100C54DDF /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		38A820A525E9957F00C54DDF /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,12 @@
 			isa = PBXGroup;
 			children = (
 				38A8207F25E6D5A100C54DDF /* AppDelegate.swift */,
+				38A8209225E6ED1B00C54DDF /* MenuBar.swift */,
+				38A820A125E7E2FB00C54DDF /* CopyHelper.swift */,
+				38A820A325E81BE100C54DDF /* KeychainHelper.swift */,
+				38A820A525E9957F00C54DDF /* AuthenticationHelper.swift */,
+				384982B325F00E2A00F1B745 /* NotificationHelper.swift */,
+				38A8209425E74C8600C54DDF /* OneTimePassword */,
 				38A8208125E6D5A100C54DDF /* ContentView.swift */,
 				38A8208325E6D5A400C54DDF /* Assets.xcassets */,
 				38A8208825E6D5A400C54DDF /* Main.storyboard */,
@@ -72,6 +98,18 @@
 				38A8208625E6D5A400C54DDF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		38A8209425E74C8600C54DDF /* OneTimePassword */ = {
+			isa = PBXGroup;
+			children = (
+				38A8209625E74C9B00C54DDF /* Crypto.swift */,
+				38A8209525E74C9B00C54DDF /* Generator.swift */,
+				38A8209925E74D0C00C54DDF /* Token.swift */,
+				38A8209D25E7503700C54DDF /* Token+URL.swift */,
+				38A8209F25E7537B00C54DDF /* Base32.swift */,
+			);
+			path = OneTimePassword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +184,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A8208225E6D5A100C54DDF /* ContentView.swift in Sources */,
+				38A8209725E74C9B00C54DDF /* Generator.swift in Sources */,
+				38A8209825E74C9B00C54DDF /* Crypto.swift in Sources */,
+				38A820A425E81BE100C54DDF /* KeychainHelper.swift in Sources */,
+				38A820A625E9957F00C54DDF /* AuthenticationHelper.swift in Sources */,
+				38A8209E25E7503700C54DDF /* Token+URL.swift in Sources */,
+				384982B425F00E2A00F1B745 /* NotificationHelper.swift in Sources */,
+				38A8209A25E74D0C00C54DDF /* Token.swift in Sources */,
 				38A8208025E6D5A100C54DDF /* AppDelegate.swift in Sources */,
+				38A8209325E6ED1B00C54DDF /* MenuBar.swift in Sources */,
+				38A820A025E7537B00C54DDF /* Base32.swift in Sources */,
+				38A820A225E7E2FB00C54DDF /* CopyHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
