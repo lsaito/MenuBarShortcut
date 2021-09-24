@@ -19,9 +19,23 @@ class KeychainHelper {
         case unhandledError(status: OSStatus)
     }
     
-    static func listPasswordAccounts() throws -> [String] {
+    static func listAccounts() throws -> [String] {
+        var accounts: [String] = []
+        
+        try? listAccounts(with: keyPassword).forEach({ (accountItem) in
+            accounts.append(accountItem)
+        })
+        
+        try? listAccounts(with: keySecret).filter({ !accounts.contains($0) }).forEach({ (accountItem) in
+            accounts.append(accountItem)
+        })
+        
+        return accounts
+    }
+    
+    private static func listAccounts(with label: String) throws -> [String] {
         let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-        kSecAttrLabel as String: keyPassword,
+        kSecAttrLabel as String: label,
         kSecMatchLimit as String: kSecMatchLimitAll,
         kSecReturnAttributes as String: true]
         
@@ -44,9 +58,17 @@ class KeychainHelper {
         return accounts
     }
     
+    static func hasPassword(for account: String) -> Bool {
+        return hasItem(with: keyPassword, for: account)
+    }
+    
     static func hasSecret(for account: String) -> Bool {
+        return hasItem(with: keySecret, for: account)
+    }
+    
+    private static func hasItem(with label: String, for account: String) -> Bool {
         let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-        kSecAttrLabel as String: keySecret,
+        kSecAttrLabel as String: label,
         kSecAttrAccount as String: account,
         kSecMatchLimit as String: kSecMatchLimitOne]
         
