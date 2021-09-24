@@ -52,13 +52,13 @@ class MenuBar: NSMenu {
         
         let menuItemView = NSMenuItem()
         let menuView = NSHostingView(rootView: contentView)
-        menuView.frame = NSRect(x: 0, y: 0, width: 200, height: 200)
+        menuView.frame = NSRect(x: 0, y: 0, width: 200, height: 250)
         menuItemView.view = menuView
         self.addItem(menuItemView)
     }
     
     private func addAccountsItems() {
-        guard let accounts = try? KeychainHelper.listAccounts() else {
+        guard let accounts = try? KeychainHelper.listAccounts(), !accounts.isEmpty else {
             addContentView()
             return
         }

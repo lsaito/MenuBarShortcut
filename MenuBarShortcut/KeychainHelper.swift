@@ -34,10 +34,12 @@ class KeychainHelper {
     }
     
     private static func listAccounts(with label: String) throws -> [String] {
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-        kSecAttrLabel as String: label,
-        kSecMatchLimit as String: kSecMatchLimitAll,
-        kSecReturnAttributes as String: true]
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrLabel as String: label,
+            kSecMatchLimit as String: kSecMatchLimitAll,
+            kSecReturnAttributes as String: true
+        ]
         
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
@@ -67,10 +69,12 @@ class KeychainHelper {
     }
     
     private static func hasItem(with label: String, for account: String) -> Bool {
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-        kSecAttrLabel as String: label,
-        kSecAttrAccount as String: account,
-        kSecMatchLimit as String: kSecMatchLimitOne]
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrLabel as String: label,
+            kSecAttrAccount as String: account,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
         
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
@@ -90,11 +94,13 @@ class KeychainHelper {
     }
     
     private static func searchItem(key keyLabel: String, account: String) throws -> String {
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-        kSecAttrLabel as String: keyLabel,
-        kSecAttrAccount as String: account,
-        kSecMatchLimit as String: kSecMatchLimitOne,
-        kSecReturnData as String: true]
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrLabel as String: keyLabel,
+            kSecAttrAccount as String: account,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecReturnData as String: true
+        ]
         
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
@@ -108,6 +114,38 @@ class KeychainHelper {
         }
         
         return password
+    }
+    
+    static func addPassword(_ password: String, for account: String) -> Bool {
+        do {
+            try addItem(password, with: keyPassword, for: account)
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    static func addSecret(_ secret: String, for account: String) -> Bool {
+        do {
+            try addItem(secret, with: keySecret, for: account)
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    private static func addItem(_ value: String, with label: String, for account: String) throws {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrLabel as String: label,
+            kSecAttrAccount as String: account,
+            kSecValueData as String: value
+        ]
+        
+        let status = SecItemAdd(query as CFDictionary, nil)
+        if status != errSecSuccess {
+            throw KeychainError.unhandledError(status: status)
+        }
     }
     
 }
