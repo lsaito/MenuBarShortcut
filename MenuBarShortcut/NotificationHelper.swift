@@ -24,6 +24,10 @@ class NotificationHelper {
             notificationCenter.add(request) { (error) in
                 if let error = error {
                     print("[MenuBarShortcut] NOTIFICATION ERROR - \(error)")
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        notificationCenter.removeDeliveredNotifications(withIdentifiers: [uuidString])
+                    }
                 }
             }
         }) {
